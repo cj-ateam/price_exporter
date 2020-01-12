@@ -1,0 +1,18 @@
+# TOML Document for Price Exporter(Pometheus & Grafana)
+
+title = "TOML Document"
+
+
+[APIs]
+dunamu = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD"
+
+binance = "https://api.binance.com/api/v3/ticker/price?symbol="
+bithumb = "https://api.bithumb.com/public/transaction_history/"
+coinone = "https://tb.coinone.co.kr/api/v1/tradehistory/recent/?market=krw&target="
+huobiGlobal = "http://api.huobi.pro/market/trade?symbol="
+upbit = "https://api.upbit.com/v1/ticker?markets="
+
+
+[Options]
+interval = 5
+listenPort = "61988"

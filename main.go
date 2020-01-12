@@ -2,11 +2,14 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"net/http"
 	"go.uber.org/zap"
 
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+
 	exporter "github.com/node-a-team/price_exporter/exporter"
+	cfg "github.com/node-a-team/price_exporter/config"
 )
 
 var (
@@ -18,6 +21,8 @@ func main() {
 	log,_ := zap.NewDevelopment()
         defer log.Sync()
 
+	cfg.ConfigPath = os.Args[1]
+	cfg.Init(log)
 
 	http.Handle("/metrics", promhttp.Handler())
 	go exporter.Start(log)
