@@ -12,17 +12,13 @@ import (
 	cfg "github.com/node-a-team/price_exporter/config"
 )
 
-var (
-	port string = "26661"
-)
-
 func main() {
 
 	log,_ := zap.NewDevelopment()
         defer log.Sync()
 
 	cfg.ConfigPath = os.Args[1]
-	cfg.Init(log)
+	port := cfg.Init(log)
 
 	http.Handle("/metrics", promhttp.Handler())
 	go exporter.Start(log)

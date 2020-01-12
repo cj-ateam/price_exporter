@@ -1,7 +1,6 @@
 package exporter
 
 import (
-	"fmt"
 	"time"
 	"go.uber.org/zap"
 
@@ -38,46 +37,18 @@ func Start(log *zap.Logger) {
 
 	for {
 		func() {
-/*
+
 			defer func() {
 
 				if r := recover(); r != nil {
 					//Error Log
 				}
 
-				time.Sleep(500 * time.Millisecond)
-
+				time.Sleep(1000 * time.Millisecond)
 			}()
-*/
+
 				metric.SetMetric(log, ps)
 				metricData := metric.GetMetric()
-
-				fmt.Println("usd/krw/dunamu: ", metricData.USD.KRW.Dunamu)
-
-				fmt.Println("btc/krw/upbit: ", metricData.BTC.KRW.Upbit)
-				fmt.Println("btc/usdt/upbit: ", metricData.BTC.USDT.Upbit)
-				fmt.Println("btc/usdt/binance: ", metricData.BTC.USDT.Binance)
-				fmt.Println("btc/usdt/huobiGlobal: ", metricData.BTC.USDT.HuobiGlobal)
-
-				fmt.Println("\natom/krw/coinone: ", metricData.ATOM.KRW.Coinone)
-				fmt.Println("atom/krw/upbit: ", metricData.ATOM.KRW.Upbit)
-				fmt.Println("atom/btc/upbit: ", metricData.ATOM.BTC.Upbit)
-				fmt.Println("atom/btc/binance: ", metricData.ATOM.BTC.Binance)
-				fmt.Println("atom/btc/huobiGlobal: ", metricData.ATOM.BTC.HuobiGlobal)
-				fmt.Println("atom/usdt/huobiGlobal: ", metricData.ATOM.USDT.HuobiGlobal)
-				fmt.Println("atom/usdt/binance: ", metricData.ATOM.USDT.Binance)
-
-				fmt.Println("\nluna/krw/coinone: ", metricData.LUNA.KRW.Coinone)
-				fmt.Println("luna/krw/bithumb: ", metricData.LUNA.KRW.Bithumb)
-				fmt.Println("luna/btc/upbit: ", metricData.LUNA.BTC.Upbit)
-
-				fmt.Println("\niris/btc/huobiGlobal: ", metricData.IRIS.BTC.HuobiGlobal)
-                                fmt.Println("iris/usdt/huobiGlobal: ", metricData.IRIS.USDT.HuobiGlobal)
-
-				fmt.Println("\nkava/btc/binance: ", metricData.KAVA.BTC.Binance)
-				fmt.Println("kava/usdt/binance: ", metricData.KAVA.USDT.Binance)
-
-				fmt.Println("------")
 
 				gaugesValue := [...]float64{
 
@@ -110,9 +81,6 @@ func Start(log *zap.Logger) {
 				for i := 0; i < len(gaugesNamespaceList); i++ {
 					gauges[i].Set(gaugesValue[i])
 				}
-
-			fmt.Println(" ")
-			time.Sleep(1000 * time.Millisecond)
 		}()
 	}
 }
