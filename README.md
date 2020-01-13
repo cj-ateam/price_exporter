@@ -1,5 +1,6 @@
 ## price_exporter
-Prometheus exporter for cryptocurrency prices.
+Prometheus exporter for cryptocurrency prices.  
+(default serivce port: 61988)
 
 
 ## list of APIs
