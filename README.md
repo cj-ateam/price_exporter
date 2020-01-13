@@ -91,3 +91,9 @@ sudo systemctl restart price_exporter.service
 ## log
 tail -f /var/log/userLog/price_exporter.log
 ```
+
+## Examples
+- Logs
+![logs](./examples/logs.PNG)
+- Prometheus_elements
+![prometheus_elements](./examples/prometheus_elements.png)
