@@ -22,7 +22,7 @@ Prometheus exporter for cryptocurrency prices.
   - from Binance
   - from Upbit
   - from HuobiGlobal
-- LUNAA to KRW
+- LUNA to KRW
   - from Coinone
   - from Bithumb
 - LUNA to BTC
