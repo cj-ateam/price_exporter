@@ -18,7 +18,7 @@ Prometheus exporter for cryptocurrency prices.
 - ATOM to USDT
   - from Binance
   - from HuobiGlobal
-- ATOM to BTX
+- ATOM to BTC
   - from Binance
   - from Upbit
   - from HuobiGlobal
