@@ -34,7 +34,11 @@ Prometheus exporter for cryptocurrency prices.
 - KAVA to BTC
   - from Binance
 - KAVA to USDT
-  = from Binance
+  - from Binance
+- SOL to BTC
+  - from Binance
+- SOL to BUSD
+  - from Binance
   
 
 ## Install
