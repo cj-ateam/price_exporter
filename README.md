@@ -3,7 +3,7 @@ Prometheus exporter for cryptocurrency prices.
 (default serivce port: 61988)
 
 
-## list of APIs
+## List of APIs
 - USD to KRW
   - from Dunamu
 - BTC to KRW
