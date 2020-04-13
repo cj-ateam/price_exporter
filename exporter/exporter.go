@@ -76,6 +76,9 @@ func Start(log *zap.Logger) {
 					metricData.KAVA.USDT.Binance,
 					metricData.KAVA.BTC.Binance,
 
+					metricData.SOL.BUSD.Binance,
+                                        metricData.SOL.BTC.Binance,
+
 				}
 
 				for i := 0; i < len(gaugesNamespaceList); i++ {
