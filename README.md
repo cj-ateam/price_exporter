@@ -92,7 +92,7 @@ WantedBy=multi-user.target
 EOF
 
 sudo systemctl enable price_exporter.service
-sudo systemctl restart price_exporter.service
+sudo systemctl start price_exporter.service
 
 
 ## log
