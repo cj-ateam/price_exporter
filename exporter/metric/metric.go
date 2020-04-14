@@ -34,6 +34,7 @@ var (
 
 					"kava_usdt_binance",
 					"kava_btc_binance",
+					"kava_krw_coinone",
 
 					"sol_busd_binance",
                                         "sol_btc_binance",
