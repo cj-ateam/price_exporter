@@ -35,6 +35,8 @@ Prometheus exporter for cryptocurrency prices.
   - from Binance
 - KAVA to USDT
   - from Binance
+- KAVA to KRW
+  - from Coinone
 - SOL to BTC
   - from Binance
 - SOL to BUSD
@@ -45,7 +47,7 @@ Prometheus exporter for cryptocurrency prices.
 ```bash
 mkdir price_exporter && cd price_exporter 
 
-wget https://github.com/node-a-team/price_exporter/releases/download/v0.2.0/price_exporter.tar.gz  && sha256sum price_exporter.tar.gz | fgrep c9b0c9e755247a93fa49a5faa7c58d568057f739d75b8c07252d4accda096a6a && tar -zxvf price_exporter.tar.gz ||  echo "Bad Binary!"
+wget https://github.com/node-a-team/price_exporter/releases/download/v0.2.1/price_exporter.tar.gz  && sha256sum price_exporter.tar.gz | fgrep a3a97432100e8c019464e65159a6a15da3675536482b88ef50ca9acf3c99dad3 && tar -zxvf price_exporter.tar.gz ||  echo "Bad Binary!"
 ```
 
 
