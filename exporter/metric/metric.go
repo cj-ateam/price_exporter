@@ -102,6 +102,9 @@ type metric struct {
 		USDT struct {
 			Binance	float64
 		}
+		KRW struct {
+                        Coinone float64
+                }
         }
 
 	SOL struct {
@@ -148,6 +151,7 @@ func SetMetric(log *zap.Logger, ps *price.PriceService) {
 	// Kava
 	metricData.KAVA.BTC.Binance = ps.GetPrice("kava/btc/binance")
 	metricData.KAVA.USDT.Binance = ps.GetPrice("kava/usdt/binance")
+	metricData.KAVA.USDT.Binance = ps.GetPrice("kava/krw/coinone")
 
 	// SOL
         metricData.SOL.BTC.Binance = ps.GetPrice("sol/btc/binance")
