@@ -34,7 +34,7 @@ Prometheus exporter for cryptocurrency prices.
 ```bash
 mkdir price_exporter && cd price_exporter 
 
-wget https://github.com/node-a-team/price_exporter/releases/download/v0.2.2/price_exporter.tar.gz  && sha256sum price_exporter.tar.gz | fgrep 5e2b355057ef24e66f559c2a897a0aa3d1cc9d6e8bec251a7baaab3143ffe2cb && tar -zxvf price_exporter.tar.gz ||  echo "Bad Binary!"
+wget https://github.com/node-a-team/price_exporter/releases/download/v0.2.2/price_exporter.tar.gz  && sha256sum price_exporter.tar.gz | fgrep 2642adbeee786f9b752ff6a4d909a3a38647cb89ce918b2635d8e347766c358e && tar -zxvf price_exporter.tar.gz ||  echo "Bad Binary!"
 ```
 
 
