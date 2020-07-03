@@ -4,50 +4,37 @@ Prometheus exporter for cryptocurrency prices.
 
 
 ## List of APIs
-- USD to KRW
-  - from Dunamu
-- BTC to KRW
-  - from Upbit
-- BTC to UDST
-  - from Upbit
-  - from Binance
-  - from HoubiGlobal
-- ATOM to KRW
-  - from Coinone
-  - from Upbit
-- ATOM to USDT
-  - from Binance
-  - from HuobiGlobal
-- ATOM to BTC
-  - from Binance
-  - from Upbit
-  - from HuobiGlobal
-- LUNA to KRW
-  - from Coinone
-  - from Bithumb
-- LUNA to BTC
-  - from Upbit
-- IRIS to USDT
-  - from HuobiGlobal
-- IRIS to BTC
-  - from HuobiGlobal
-- KAVA to BTC
-  - from Binance
-- KAVA to USDT
-  - from Binance
-- KAVA to KRW
-  - from Coinone
-- SOL to BTC
-  - from Binance
-- SOL to BUSD
-  - from Binance
+- USD
+  - USD/KRW(Dunamu)
+- BTC
+  - BTC/KRW(Upbit)
+  - BTC/UDST(Upbit, Binance, HoubiGlobal)
+- ATOM
+  - ATOM/USDT(Binance, HuobiGlobal)
+  - ATOM/KRW(Coinone, Upbit)
+  - ATOM/BTC(Binance, Upbit, HuobiGlobal)
+- LUNA
+  - LUNA/KRW(Coinone, Bithumb)
+  - LUNA/BTC(Upbit)
+- IRIS
+  - IRIS/USDT(HuobiGlobal)
+  - IRIS/BTC(HuobiGlobal)
+- KAVA
+  - KAVA/USDT(Binance)
+  - KAVA/KRW(Coinone)
+  - KAVA/BTC(Binance)
+- BAND
+  - BAND/USDT(Binance) 
+- SOL
+  - SOL/BUSD(Binance)
+  - SOL/BTC(Binance)
   
 
 ## Install
 ```bash
 mkdir price_exporter && cd price_exporter 
 
-wget https://github.com/node-a-team/price_exporter/releases/download/v0.2.1/price_exporter.tar.gz  && sha256sum price_exporter.tar.gz | fgrep 5e1cd0808615ba4b898ec0b9ebcccb11c0bb5d9e96b61b3ea2fea9a13aaa9635 && tar -zxvf price_exporter.tar.gz ||  echo "Bad Binary!"
+wget https://github.com/node-a-team/price_exporter/releases/download/v0.2.2/price_exporter.tar.gz  && sha256sum price_exporter.tar.gz | fgrep 5e2b355057ef24e66f559c2a897a0aa3d1cc9d6e8bec251a7baaab3143ffe2cb && tar -zxvf price_exporter.tar.gz ||  echo "Bad Binary!"
 ```
 
 
@@ -64,12 +51,6 @@ wget https://github.com/node-a-team/price_exporter/releases/download/v0.2.1/pric
 ## Use systemd service
   
 ```sh
-# Make log directory & file
-sudo mkdir /var/log/userLog  
-sudo touch /var/log/userLog/price_exporter.log  
-# user: monitoring
-sudo chown monitoring:monitoring /var/log/userLog/price_exporter.log
-
 # $HOME: /data/monitoring
 # Path to config.toml: /data/monitoring/price_exporter
 sudo tee /etc/systemd/system/price_exporter.service > /dev/null <<EOF
@@ -82,8 +63,9 @@ User=monitoring
 WorkingDirectory=/data/monitoring/price_exporter
 ExecStart=/data/monitoring/price_exporter/price_exporter \
         /data/monitoring/price_exporter
-StandardOutput=file:/var/log/userLog/price_exporter.log
-StandardError=file:/var/log/userLog/price_exporter.log
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=price-exporter
 Restart=always
 RestartSec=3
 
@@ -96,7 +78,7 @@ sudo systemctl start price_exporter.service
 
 
 ## log
-tail -f /var/log/userLog/price_exporter.log
+journalctl -f | grep price-exporter
 ```
 
 ## Examples
