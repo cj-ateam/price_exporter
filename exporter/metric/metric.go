@@ -36,6 +36,8 @@ var (
 					"kava_btc_binance",
 					"kava_krw_coinone",
 
+					"band_usdt_binance",
+
 					"sol_busd_binance",
                                         "sol_btc_binance",
 
@@ -108,6 +110,12 @@ type metric struct {
                 }
         }
 
+	BAND struct {
+                USDT struct {
+                        Binance float64
+                }
+        }
+
 	SOL struct {
                 BTC struct {
                         Binance float64
@@ -153,6 +161,9 @@ func SetMetric(log *zap.Logger, ps *price.PriceService) {
 	metricData.KAVA.BTC.Binance = ps.GetPrice("kava/btc/binance")
 	metricData.KAVA.USDT.Binance = ps.GetPrice("kava/usdt/binance")
 	metricData.KAVA.KRW.Coinone = ps.GetPrice("kava/krw/coinone")
+
+	// BAND PROTOCOL
+	metricData.BAND.USDT.Binance = ps.GetPrice("band/usdt/binance")
 
 	// SOL
         metricData.SOL.BTC.Binance = ps.GetPrice("sol/btc/binance")

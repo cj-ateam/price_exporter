@@ -47,6 +47,8 @@ func (ps *PriceService) OnStart(log *zap.Logger) error {
 	go ps.Binance(log, "usdt", "kava")
 	go ps.Coinone(log, "kava")
 
+	go ps.Binance(log, "usdt", "band")
+
 	go ps.Binance(log, "btc", "sol")
         go ps.Binance(log, "busd", "sol")
 

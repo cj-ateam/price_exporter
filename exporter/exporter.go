@@ -77,6 +77,8 @@ func Start(log *zap.Logger) {
 					metricData.KAVA.BTC.Binance,
 					metricData.KAVA.KRW.Coinone,
 
+					metricData.BAND.USDT.Binance,
+
 					metricData.SOL.BUSD.Binance,
                                         metricData.SOL.BTC.Binance,
 
