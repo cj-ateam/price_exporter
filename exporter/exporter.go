@@ -80,8 +80,10 @@ func Start(log *zap.Logger) {
 					metricData.BAND.USDT.Binance,
 
 					metricData.SOL.BUSD.Binance,
-                                        metricData.SOL.BTC.Binance,
+                    metricData.SOL.BTC.Binance,
 
+					metricData.MATIC.KRW.Upbit,
+					metricData.MATIC.KRW.Bithumb,
 				}
 
 				for i := 0; i < len(gaugesNamespaceList); i++ {

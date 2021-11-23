@@ -39,7 +39,10 @@ var (
 					"band_usdt_binance",
 
 					"sol_busd_binance",
-                                        "sol_btc_binance",
+                    "sol_btc_binance",
+
+					"matic_krw_upbit",
+					"matic_krw_bithumb",
 
 				}
 )
@@ -124,6 +127,12 @@ type metric struct {
                         Binance float64
                 }
         }
+	MATIC struct {
+		KRW struct {
+			Upbit float64
+			Bithumb float64
+		}
+	}
 }
 
 
@@ -169,6 +178,9 @@ func SetMetric(log *zap.Logger, ps *price.PriceService) {
         metricData.SOL.BTC.Binance = ps.GetPrice("sol/btc/binance")
         metricData.SOL.BUSD.Binance = ps.GetPrice("sol/busd/binance")
 
+	// MATIC
+	metricData.MATIC.KRW.Upbit = ps.GetPrice("matic/krw/upbit")
+	metricData.MATIC.KRW.Bithumb = ps.GetPrice("matic/krw/bithumb")
 
 }
 

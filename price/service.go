@@ -50,7 +50,10 @@ func (ps *PriceService) OnStart(log *zap.Logger) error {
 	go ps.Binance(log, "usdt", "band")
 
 	go ps.Binance(log, "btc", "sol")
-        go ps.Binance(log, "busd", "sol")
+	go ps.Binance(log, "busd", "sol")
+	
+	go ps.Upbit(log, "krw", "matic")
+	go ps.Bithumb(log, "matic")
 
 	return nil
 }
